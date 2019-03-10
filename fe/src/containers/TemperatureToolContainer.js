@@ -56,22 +56,42 @@ class TemperatureToolContainer extends Component {
   // form submissions
   handleFormSubmit(e) {
     e.preventDefault();
+
+    // get form data
     let formData = this.state.formData
     let convert_from = formData.convert_from.toLowerCase();
     let convert_to = formData.convert_to.toLowerCase();
+    let input_temp = formData.input_temp;
+    let student_response = formData.student_response;
+    let data = {}
+
+    // basic validation
+    if (!input_temp) {
+      alert("Please add an Input Temperature");
+      return false;
+    }
+
+    if (!student_response) {
+      alert("Please add an Student Response");
+      return false;
+    }
 
     if (convert_from === convert_to) {
-      console.log("sorry, you can't convert")
+      alert("Conversion Types can't match");
+      return false;
     } else {
       let conversion_type = convert_from + "_to_" + convert_to
-      this.state.formData.converstion_type = conversion_type
+
+      data.converstion_type = conversion_type
+      data.input_temp = parseFloat(input_temp)
+      data.student_response = parseFloat(student_response)
     }
 
     const apiUrl = process.env.REACT_APP_API_URL + "/temperature"
-    console.log("formData = ", this.state.formData)
+    console.log("submitted form data = ", JSON.stringify(data))
     fetch(apiUrl, {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: JSON.stringify(data),
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
