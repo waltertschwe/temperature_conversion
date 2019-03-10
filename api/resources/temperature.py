@@ -9,13 +9,14 @@ from ..src.temperature_conversion import TemperatureConversion as tc
 def temperature_conversion():
     """ Temperature Conversion """
 
-    #conversion_type = request.data.get('conversion_type')
+    conversion_type = request.data.get('conversion_type')
     input_temp = request.data.get('input_temp')
-    #student_response = request.data.get('student_response')
+    student_response = request.data.get('student_response')
 
     tc_obj = tc()
-    #input_temp = 34.7
-    result = tc_obj.kelvin_to_celsius(input_temp)
+    function_to_call = getattr(tc_obj, conversion_type)
+    result = function_to_call(input_temp)
+
     data = {}
     data['result'] = result
 
