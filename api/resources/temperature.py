@@ -21,7 +21,15 @@ def temperature_conversion():
 
     ## return the response
     data = {}
-    data['conversion_result'] = conversion_result
-
+    if conversion_result:
+        ## process a converion was a success
+        data['conversion_result'] = conversion_result
+        if conversion_result == student_response:
+            data['is_correct'] = True
+        else:
+            data['is_correct'] = False
+    else:
+        ## could not process conversion based on inputs
+        data['error'] = "Sorry we were not able to process the conversion."
 
     return data

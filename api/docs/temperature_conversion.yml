@@ -19,7 +19,7 @@ parameters:
           type: string
           description: Unit of Measure that will be converted
           example: fahrenheit_to_celsius
-        student_reponse:
+        student_response:
           type: integer
           description: Value the student entered
           example: 65
