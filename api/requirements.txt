@@ -1,0 +1,6 @@
+flask
+Flask-API
+flask-cors
+requests
+pytest
+flasgger

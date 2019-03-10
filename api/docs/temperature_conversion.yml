@@ -1,0 +1,34 @@
+Temperature Conversion
+---
+tags:
+  - Temperature
+parameters:
+  - in: body
+    name: body
+    schema:
+      required:
+        - input_temp
+        - conversion_type
+        - student_response
+      properties:
+        input_temp:
+          type: integer
+          description: Value that will be converted
+          example: 34.6
+        conversion_type:
+          type: string
+          description: Unit of Measure that will be converted
+          example: f
+        student_reponse:
+          type: integer
+          description: Value the student entered
+          example: 65
+responses:
+  200:
+    examples:
+      {
+        "response":
+          [
+            "true"
+          ]
+      }
