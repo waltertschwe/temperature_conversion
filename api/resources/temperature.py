@@ -21,6 +21,7 @@ def temperature_conversion():
 
     ## return the response
     data = {}
+    response = {}
     if conversion_result:
         ## process a converion was a success
         data['conversion_result'] = conversion_result
@@ -32,4 +33,6 @@ def temperature_conversion():
         ## could not process conversion based on inputs
         data['error'] = "Sorry we were not able to process the conversion."
 
-    return data
+    response['result'] = data
+
+    return response

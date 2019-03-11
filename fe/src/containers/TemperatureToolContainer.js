@@ -82,7 +82,7 @@ class TemperatureToolContainer extends Component {
     } else {
       let conversion_type = convert_from + "_to_" + convert_to
 
-      data.converstion_type = conversion_type
+      data.conversion_type = conversion_type
       data.input_temp = parseFloat(input_temp)
       data.student_response = parseFloat(student_response)
     }
@@ -99,8 +99,16 @@ class TemperatureToolContainer extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      //this.setState({results: data.lowest_cost_ndc})
-      console.log("data = ", data)
+
+      console.log("update state = ", this.state)
+      if(data.result.is_correct) {
+        let displayMessage = "Correct!"
+        data.result.displayMessage = displayMessage
+      } else {
+        let displayMessage = "Wrong!"
+        data.result.displayMessage = displayMessage
+      }
+      this.setState({results: data.result})
     })
     .catch(error => console.error(error))
   }
@@ -108,13 +116,14 @@ class TemperatureToolContainer extends Component {
   render() {
     return (
       <div className="container-fluid">
-      <div className="row mt-5">
-        <div className="col-md-12"></div>
-      </div>
+        <div className="row mt-5">
+          <div className="col-md-12">
+          </div>
+        </div>
         <div className="row">
           <div className="col-md-4">
              <div className="card">
-                <div className="card-header bg-success">Test Student Response</div>
+                <div className="card-header bg-success">Temperature Conversion Test</div>
                   <div className="card-body text-secondary">
                   <span className="card-text">
                   <form className="container-fluid" onSubmit={this.handleFormSubmit}>
@@ -174,11 +183,11 @@ class TemperatureToolContainer extends Component {
                  </div>
                </div>
            </div>
-           <div className="col-md-8">
-             <h3>Temperature Results </h3>
-
+           <div className="col-md-4">
+              <div>{this.state.results.displayMessage}</div>
+              <div>{this.state.results.conversion_result}</div>
            </div>
-        </div>
+         </div>
       </div>
      );
    }

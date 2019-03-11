@@ -14,7 +14,7 @@ const TemperatureTool = () => (
 )
 
 const Dashboard = () => (
-    <div class="mt-5 ml-5">
+    <div className="mt-5 ml-5">
       <h3>Dashboard</h3>
     </div>
 )
@@ -24,7 +24,6 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <div></div>
         <Route path="/temperature-tool" component={TemperatureTool} />
         <Route path="/dashboard" component={Dashboard} />
       </div>
