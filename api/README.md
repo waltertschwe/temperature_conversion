@@ -3,7 +3,17 @@
 Temperature Conversion API
 
 ```bash
-export FLASK_APP=$fullPath/app.py
+git clone git@github.com:waltertschwe/temperature_conversion.git
+
+cd temperature_conversion
+
+virtualenv -p python3 api/
+
+source api/bin/activate
+
+pip install -r requirements.txt
+
+export FLASK_APP=$fullPathToApp/app.py
 
 flask run
 ```
