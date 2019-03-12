@@ -140,8 +140,8 @@ class TemperatureToolContainer extends Component {
                     <Select
                       title={"Convert From"}
                       name={"convert_from"}
-                      defaultValue={this.state.formData.convert_from}
-                      //value={this.state.formData.price_code}
+                      //defaultValue={this.state.formData.convert_from}
+                      value={this.state.formData.convert_from}
                       options={this.state.temperatureOptions}
                       placeholder={"Select Temperature Unit of Measure"}
                       onChange={this.handleInput}
@@ -150,8 +150,8 @@ class TemperatureToolContainer extends Component {
                     <Select
                       title={"Convert To"}
                       name={"convert_to"}
-                      defaultValue={this.state.formData.convert_to}
-                      //value={this.state.formData.price_code}
+                      //defaultValue={this.state.formData.convert_to}
+                      value={this.state.formData.convert_to}
                       options={this.state.temperatureOptions}
                       placeholder={"Select Temperature Unit of Measure"}
                       onChange={this.handleInput}
