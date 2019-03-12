@@ -1,6 +1,6 @@
 Temperature Conversion API
 
-*** Pre-Installation ***
+** Pre-Installation **
 
 python3
 
@@ -8,7 +8,7 @@ virutalenv
 
 pip
 
-*** Installation ***
+** Installation **
 ```bash
 git clone git@github.com:waltertschwe/temperature_conversion.git
 
