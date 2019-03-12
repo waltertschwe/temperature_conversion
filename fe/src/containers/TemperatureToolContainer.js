@@ -99,7 +99,6 @@ class TemperatureToolContainer extends Component {
     })
     .then(response => response.json())
     .then(data => {
-
       console.log("update state = ", this.state)
       if (data.result.is_correct) {
         let displayMessage = "Correct!"
