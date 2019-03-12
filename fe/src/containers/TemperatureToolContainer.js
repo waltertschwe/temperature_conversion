@@ -101,7 +101,7 @@ class TemperatureToolContainer extends Component {
     .then(data => {
 
       console.log("update state = ", this.state)
-      if(data.result.is_correct) {
+      if (data.result.is_correct) {
         let displayMessage = "Correct!"
         data.result.displayMessage = displayMessage
       } else {
@@ -114,6 +114,7 @@ class TemperatureToolContainer extends Component {
   }
 
   render() {
+
     return (
       <div className="container-fluid">
         <div className="row mt-5">
@@ -123,7 +124,7 @@ class TemperatureToolContainer extends Component {
         <div className="row">
           <div className="col-md-4">
              <div className="card">
-                <div className="card-header bg-success">Temperature Conversion Test</div>
+                <div className="card-header bg-secondary">Temperature Conversion</div>
                   <div className="card-body text-secondary">
                   <span className="card-text">
                   <form className="container-fluid" onSubmit={this.handleFormSubmit}>
@@ -184,8 +185,45 @@ class TemperatureToolContainer extends Component {
                </div>
            </div>
            <div className="col-md-4">
-              <div>{this.state.results.displayMessage}</div>
-              <div>{this.state.results.conversion_result}</div>
+              {this.state.results.is_correct == true &&
+                <div>
+                  <div className="card text-white bg-success mb-3">
+                    <div className="card-header">Header</div>
+                      <div className="card-body">
+                        <h5 className="card-title">{this.state.results.displayMessage}</h5>
+                        <p className="card-text">
+                          {this.state.results.conversion_result}
+                        </p>
+                      </div>
+                  </div>
+                </div>
+              }
+              {this.state.results.is_correct == false &&
+                <div>
+                  <div className="card text-white bg-danger mb-3">
+                    <div className="card-header">Header</div>
+                      <div className="card-body">
+                        <h5 className="card-title">{this.state.results.displayMessage}</h5>
+                        <p className="card-text">
+                          {this.state.results.conversion_result}
+                        </p>
+                      </div>
+                  </div>
+                </div>
+              }
+              {this.state.results.error == true &&
+                <div>
+                  <div className="card text-white bg-warning mb-3">
+                    <div className="card-header">Header</div>
+                      <div className="card-body">
+                        <h5 className="card-title">Invalid</h5>
+                        <p className="card-text">
+                            Sorry could not process that conversion.
+                        </p>
+                      </div>
+                  </div>
+                </div>
+              }
            </div>
          </div>
       </div>

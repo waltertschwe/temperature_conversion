@@ -31,7 +31,7 @@ def temperature_conversion():
             data['is_correct'] = False
     else:
         ## could not process conversion based on inputs
-        data['error'] = "Sorry we were not able to process the conversion."
+        data['error'] = True
 
     response['result'] = data
 
