@@ -185,7 +185,7 @@ class TemperatureToolContainer extends Component {
                </div>
            </div>
            <div className="col-md-4 ml-5">
-              {this.state.results.is_correct == true &&
+              {this.state.results.is_correct === true &&
                 <div>
                   <div className="card text-white bg-success mb-3">
                     <div className="card-header">{this.state.results.displayMessage}</div>
@@ -197,7 +197,7 @@ class TemperatureToolContainer extends Component {
                   </div>
                 </div>
               }
-              {this.state.results.is_correct == false &&
+              {this.state.results.is_correct === false &&
                 <div>
                   <div className="card text-white bg-danger mb-3">
                     <div className="card-header">{this.state.results.displayMessage}</div>
@@ -209,7 +209,7 @@ class TemperatureToolContainer extends Component {
                   </div>
                 </div>
               }
-              {this.state.results.error == true &&
+              {this.state.results.error === true &&
                 <div>
                   <div className="card text-white bg-warning mb-3">
                     <div className="card-header">Invalid</div>
