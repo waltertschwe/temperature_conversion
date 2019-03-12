@@ -1,6 +1,15 @@
-**"Remember, a few hours of trial and error can save you several minutes of looking at the README."**
+Temperature Conversion Web Application
 
-Temperature Conversion Application
+## Pre-Installation
+
+```
+- npm
+
+- nodejs
+
+```
+
+## Installation
 
 ```bash
 git clone git@github.com:waltertschwe/temperature_conversion.git
