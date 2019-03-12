@@ -184,13 +184,12 @@ class TemperatureToolContainer extends Component {
                  </div>
                </div>
            </div>
-           <div className="col-md-4">
+           <div className="col-md-4 ml-5">
               {this.state.results.is_correct == true &&
                 <div>
                   <div className="card text-white bg-success mb-3">
-                    <div className="card-header">Header</div>
+                    <div className="card-header">{this.state.results.displayMessage}</div>
                       <div className="card-body">
-                        <h5 className="card-title">{this.state.results.displayMessage}</h5>
                         <p className="card-text">
                           {this.state.results.conversion_result}
                         </p>
@@ -201,9 +200,8 @@ class TemperatureToolContainer extends Component {
               {this.state.results.is_correct == false &&
                 <div>
                   <div className="card text-white bg-danger mb-3">
-                    <div className="card-header">Header</div>
+                    <div className="card-header">{this.state.results.displayMessage}</div>
                       <div className="card-body">
-                        <h5 className="card-title">{this.state.results.displayMessage}</h5>
                         <p className="card-text">
                           {this.state.results.conversion_result}
                         </p>
@@ -214,9 +212,8 @@ class TemperatureToolContainer extends Component {
               {this.state.results.error == true &&
                 <div>
                   <div className="card text-white bg-warning mb-3">
-                    <div className="card-header">Header</div>
+                    <div className="card-header">Invalid</div>
                       <div className="card-body">
-                        <h5 className="card-title">Invalid</h5>
                         <p className="card-text">
                             Sorry could not process that conversion.
                         </p>
